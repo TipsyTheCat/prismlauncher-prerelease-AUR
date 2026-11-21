@@ -1,6 +1,6 @@
-pkgbase = prismlauncher-git
-	pkgdesc = Minecraft launcher with ability to manage multiple instances
-	pkgver = 11.0.0.pre2.r2.g194b72f18
+pkgbase = prismlauncher-prerelease
+	pkgdesc = Minecraft launcher with ability to manage multiple instances - prerelease
+	pkgver = 12.0.0
 	pkgrel = 1
 	url = https://prismlauncher.org
 	arch = i686
@@ -38,6 +38,7 @@ pkgbase = prismlauncher-git
 	optdepends = gamemode: to optimize gameplay
 	provides = prismlauncher
 	conflicts = prismlauncher
+	conflicts = prismlauncher-git
 	source = git+https://github.com/PrismLauncher/PrismLauncher.git
 	source = git+https://github.com/PrismLauncher/libnbtplusplus.git
 	source = lionshead.license
@@ -49,4 +50,4 @@ pkgbase = prismlauncher-git
 	sha256sums = 009e25d32aab6dbae193aac4b82fa1a26cb07f288225b2906da425a0f219bc4c
 	sha256sums = 32646946afc31ef5a4ce2cbb5a5a68a9f552c540a78ef23344c51c3efca58fa6
 
-pkgname = prismlauncher-git
+pkgname = prismlauncher-prerelease

@@ -1,16 +1,18 @@
-# Maintainer: Sefa Eyeoglu <contact@scrumplex.net>
-# Maintainer: txtsd <aur.archlinux@ihavea.quest>
-# Maintainer: seth <getchoo at tuta dot io>
+# Maintainer: TipsyTheCat <super boss men d @t g mail d0t c0m>
+# Contributor: Sefa Eyeoglu <contact@scrumplex.net>
+# Contributor: txtsd <aur.archlinux@ihavea.quest>
+# Contributor: seth <getchoo at tuta dot io>
 # Contributor: Elijah Gregg <lovetocode999 at tilde dot team>
 # Contributor: Lenny McLennington <lennymclennington@protonmail.com>
 # Contributor: Miko <mikoxyzzz@gmail.com>
 # Contributor: Cheru Berhanu <aur attt cheru doot dev>
 
-pkgname=prismlauncher-git
-_pkgname=${pkgname%-git}
-pkgver=11.0.0.pre2.r2.g194b72f18
+pkgname=prismlauncher-prerelease
+_pkgname=prismlauncher
+pkgver=12.0.0
+_gittag=12.0.0-pre1
 pkgrel=1
-pkgdesc='Minecraft launcher with ability to manage multiple instances'
+pkgdesc='Minecraft launcher with ability to manage multiple instances - prerelease'
 arch=(i686 x86_64 aarch64)
 url='https://prismlauncher.org'
 license=('GPL-3.0-only AND LGPL-3.0-or-later AND LGPL-2.0-or-later AND Apache-2.0 AND MIT AND LicenseRef-Batch AND OFL-1.1')
@@ -32,7 +34,7 @@ depends=(
   zlib
 )
 provides=('prismlauncher')
-conflicts=('prismlauncher')
+conflicts=('prismlauncher' 'prismlauncher-git')
 makedepends=(
   cmake
   extra-cmake-modules
@@ -62,15 +64,10 @@ sha256sums=('SKIP'
             '009e25d32aab6dbae193aac4b82fa1a26cb07f288225b2906da425a0f219bc4c'
             '32646946afc31ef5a4ce2cbb5a5a68a9f552c540a78ef23344c51c3efca58fa6')
 
-pkgver() {
-  cd "PrismLauncher"
-
-  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-}
-
 prepare() {
   cd "PrismLauncher"
 
+  git checkout ${_gittag}
   git submodule init
   git config submodule.libraries/libnbtplusplus.url "${srcdir}/libnbtplusplus"
   git config submodule.flatpak/shared-modules.active false
