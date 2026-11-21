@@ -1,4 +1,4 @@
-# Maintainer: TipsyTheCat <super boss men d @t g mail d0t c0m>
+# Maintainer: TipsyTheCat
 # Contributor: Sefa Eyeoglu <contact@scrumplex.net>
 # Contributor: txtsd <aur.archlinux@ihavea.quest>
 # Contributor: seth <getchoo at tuta dot io>
